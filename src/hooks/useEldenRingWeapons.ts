@@ -69,24 +69,26 @@ export function useEldenRingWeapons(params: UseWeaponsParams = {}): UseWeaponsRe
         setLoading(true);
         setError(null);
         
+        const shouldFetchAll = (category && category !== "all") || !!search;
+
+        // Build params for direct API request (used for non-filtered pagination)
         const searchParams = new URLSearchParams({
           limit: limit.toString(),
           page: page.toString(),
         });
-
         if (search) {
-          searchParams.append('name', search);
+          searchParams.append("name", search);
         }
 
-        // For category filtering, we need to fetch more data
-        const fetchLimit = category && category !== "all" ? 1000 : limit;
+        // If filtering by category or searching, we fetch a large dataset so we
+        // can paginate client-side
+        const fetchLimit = shouldFetchAll ? 1000 : limit;
         const fetchParams = new URLSearchParams({
           limit: fetchLimit.toString(),
-          page: category && category !== "all" ? "0" : page.toString(),
+          page: shouldFetchAll ? "0" : page.toString(),
         });
-
         if (search) {
-          fetchParams.append('name', search);
+          fetchParams.append("name", search);
         }
 
         const response = await fetch(`https://eldenring.fanapis.com/api/weapons?${fetchParams}`);
@@ -99,25 +101,27 @@ export function useEldenRingWeapons(params: UseWeaponsParams = {}): UseWeaponsRe
         
         if (data.success && data.data) {
           let filteredWeapons = data.data;
-          
+
           // Filter by category client-side since API doesn't support category filter
           if (category && category !== "all") {
             filteredWeapons = filteredWeapons.filter(
               (weapon: EldenRingWeapon) => weapon.category === category
             );
-            
-            // Apply pagination manually for filtered results
+          }
+
+          const shouldPaginateClient = (category && category !== "all") || !!search;
+
+          if (shouldPaginateClient) {
             const startIndex = page * limit;
             const endIndex = startIndex + limit;
             const paginatedWeapons = filteredWeapons.slice(startIndex, endIndex);
-            
             setWeapons(paginatedWeapons);
           } else {
             setWeapons(filteredWeapons);
           }
-          
-          const totalItems = category && category !== "all" 
-            ? filteredWeapons.length 
+
+          const totalItems = (category && category !== "all") || search
+            ? filteredWeapons.length
             : data.total || data.count;
             
           setPagination({
