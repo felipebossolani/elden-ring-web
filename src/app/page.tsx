@@ -1,102 +1,131 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <div className="relative min-h-screen flex items-center justify-center px-6 -mt-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
+        
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <h1 className="font-medieval text-5xl md:text-7xl lg:text-8xl text-golden-light mb-6 tracking-wide">
+            ELDEN RING
+          </h1>
+          <div className="w-24 h-1 bg-golden mx-auto mb-8" />
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed">
+            Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring 
+            and become an Elden Lord in the Lands Between.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Link href="/classes">
+              <Button size="lg" className="bg-golden hover:bg-golden-dark text-background font-medieval text-lg px-8 py-6 h-auto transition-all duration-300 hover:shadow-lg hover:shadow-golden/30">
+                Explore Classes
+              </Button>
+            </Link>
+            <Link href="/weapons">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-golden/50 text-golden hover:bg-golden/10 font-medieval text-lg px-8 py-6 h-auto"
+              >
+                Explore Weapons
+              </Button>
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </div>
+
+      {/* Features Section */}
+      <div className="px-6 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-medieval text-3xl md:text-4xl text-golden-light mb-4">
+              Explore The Lands Between
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Discover the rich lore, formidable classes, and legendary equipment 
+              that await in FromSoftware&apos;s masterpiece.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="font-medieval text-golden-light">Classes</CardTitle>
+                <CardDescription>
+                  Discover the 10 starting classes, each with unique stats and origins.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  From the mighty Hero to the arcane Astrologer, choose your path through The Lands Between.
+                </p>
+                <Link href="/classes">
+                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
+                    View Classes
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="font-medieval text-golden-light">Weapons</CardTitle>
+                <CardDescription>
+                  Legendary armaments await discovery.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Explore an arsenal of over 300 weapons, from swift daggers to mighty colossal swords.
+                </p>
+                <Link href="/weapons">
+                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
+                    View Weapons
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-card/80 backdrop-blur-sm opacity-60">
+              <CardHeader>
+                <CardTitle className="font-medieval text-muted-foreground">Bosses</CardTitle>
+                <CardDescription>
+                  Face the demigods and their champions (Coming Soon).
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Learn about the fearsome bosses that guard the shards of the Elden Ring.
+                </p>
+                <Button disabled className="w-full">
+                  Coming Soon
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="border-t border-border/50 py-8 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-sm text-muted-foreground">
+            Built with the{" "}
+            <a 
+              href="https://docs.eldenring.fanapis.com/docs/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-golden hover:text-golden-light transition-colors"
+            >
+              Elden Ring Fan API
+            </a>
+            {" "}• Not affiliated with FromSoftware or BANDAI NAMCO
+          </p>
+        </div>
       </footer>
     </div>
   );
