@@ -71,17 +71,8 @@ export function useEldenRingWeapons(params: UseWeaponsParams = {}): UseWeaponsRe
         
         const shouldFetchAll = (category && category !== "all") || !!search;
 
-        // Build params for direct API request (used for non-filtered pagination)
-        const searchParams = new URLSearchParams({
-          limit: limit.toString(),
-          page: page.toString(),
-        });
-        if (search) {
-          searchParams.append("name", search);
-        }
-
-        // If filtering by category or searching, we fetch a large dataset so we
-        // can paginate client-side
+        // Determine request params. If filtering by category or searching,
+        // fetch a large dataset so we can paginate client-side.
         const fetchLimit = shouldFetchAll ? 1000 : limit;
         const fetchParams = new URLSearchParams({
           limit: fetchLimit.toString(),
