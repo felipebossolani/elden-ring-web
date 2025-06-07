@@ -111,6 +111,7 @@ npm run build        # Build de produção
 npm run start        # Servidor de produção
 npm run lint         # Verificação de código
 npm run type-check   # Verificação de tipos
+npm test             # Executa os testes
 ```
 
 ## 🤝 Contribuição
