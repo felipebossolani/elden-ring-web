@@ -6,12 +6,14 @@ interface WeaponsPaginationProps {
   pagination: PaginationInfo;
   onPageChange: (page: number) => void;
   loading: boolean;
+  itemLabel?: string;
 }
 
-export function WeaponsPagination({ 
-  pagination, 
-  onPageChange, 
-  loading 
+export function WeaponsPagination({
+  pagination,
+  onPageChange,
+  loading,
+  itemLabel = "weapons",
 }: WeaponsPaginationProps) {
   const { currentPage, totalPages, totalItems, itemsPerPage } = pagination;
   
@@ -43,7 +45,7 @@ export function WeaponsPagination({
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
       <div className="text-sm text-muted-foreground">
-        Showing {startItem}-{endItem} of {totalItems} weapons
+        Showing {startItem}-{endItem} of {totalItems} {itemLabel}
       </div>
       
       <div className="flex items-center gap-2">

@@ -12,6 +12,9 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
   - Paginação com 16 armas por página
   - Cards detalhados com poder de ataque, scaling, requisitos e peso
   - Categorias e graus de scaling com código de cores
+- **🙏 Incantations**: Milagres e encantamentos para aprimorar sua jornada
+  - Busca por nome do feitiço
+  - Paginação com 16 resultados por página
 - **🛡️ Shields**: Defesas variadas para todos os estilos
 - **🔥 Ashes of War**: Lista completa de cinzas com afinidade e skill
 - **🧑‍🤝‍🧑 NPCs**: Encontre comerciantes e aliados
@@ -71,6 +74,7 @@ src/
 ├── app/                    # App Router do Next.js
 │   ├── classes/           # Página das classes
 │   ├── weapons/           # Página das armas
+│   ├── incantations/      # Página das incantações
 │   ├── shields/           # Página dos escudos
 │   ├── globals.css        # Estilos globais
 │   ├── layout.tsx         # Layout raiz
@@ -79,7 +83,9 @@ src/
 │   ├── ui/               # Componentes shadcn/ui
 │   ├── ClassCard.tsx     # Card das classes
 │   ├── WeaponCard.tsx    # Card das armas
+│   ├── IncantationCard.tsx # Card das incantações
 │   ├── WeaponsFilters.tsx # Filtros das armas
+│   ├── IncantationsFilters.tsx # Filtros das incantações
 │   ├── WeaponsPagination.tsx # Paginação das armas
 │   ├── NPCCard.tsx       # Card dos NPCs
 │   ├── NpcsFilters.tsx   # Filtros dos NPCs
@@ -116,6 +122,7 @@ src/
 Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **📜 Classes**: `https://eldenring.fanapis.com/api/classes`
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
+- **🙏 Incantations**: `https://eldenring.fanapis.com/api/incantations`
 - **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **🧑‍🤝‍🧑 NPCs**: `https://eldenring.fanapis.com/api/npcs`
 - **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`

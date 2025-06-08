@@ -60,6 +60,7 @@ export interface EldenRingItem {
 
 export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
 
+export interface EldenRingIncantation {
 export interface EldenRingLocation {
   id: string;
   name: string;
@@ -137,6 +138,7 @@ export interface EldenRingSorcery {
     amount: number;
   }>;
 }
+export type EldenRingIncantationsResponse = EldenRingApiResponse<EldenRingIncantation>;
 
 export type EldenRingSorceriesResponse = EldenRingApiResponse<EldenRingSorcery>;
 
