@@ -51,7 +51,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
               <CardHeader>
                 <CardTitle className="font-medieval text-golden-light">Classes</CardTitle>
@@ -85,6 +85,25 @@ export default function Home() {
                 <Link href="/weapons">
                   <Button className="w-full bg-golden hover:bg-golden-dark text-background">
                     View Weapons
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="font-medieval text-golden-light">Creatures</CardTitle>
+                <CardDescription>
+                  Encounter the beasts that roam the realm.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Learn about their habitats and what treasures they may drop.
+                </p>
+                <Link href="/creatures">
+                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
+                    View Creatures
                   </Button>
                 </Link>
               </CardContent>

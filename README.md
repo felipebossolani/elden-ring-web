@@ -12,6 +12,7 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
   - Paginação com 16 armas por página
   - Cards detalhados com poder de ataque, scaling, requisitos e peso
   - Categorias e graus de scaling com código de cores
+- **🐾 Criaturas**: Conheça as criaturas e monstros espalhados pelo mundo
 - **🌓 Dark/Light Mode**: Sistema completo de alternância de tema
   - Toggle na navegação superior direita
   - Persistência da preferência no localStorage
@@ -65,6 +66,7 @@ src/
 ├── app/                    # App Router do Next.js
 │   ├── classes/           # Página das classes
 │   ├── weapons/           # Página das armas
+│   ├── creatures/        # Página das criaturas
 │   ├── globals.css        # Estilos globais
 │   ├── layout.tsx         # Layout raiz
 │   └── page.tsx          # Página inicial
@@ -72,12 +74,13 @@ src/
 │   ├── ui/               # Componentes shadcn/ui
 │   ├── ClassCard.tsx     # Card das classes
 │   ├── WeaponCard.tsx    # Card das armas
+│   ├── CreatureCard.tsx  # Card das criaturas
 │   ├── WeaponsFilters.tsx # Filtros das armas
 │   ├── WeaponsPagination.tsx # Paginação das armas
 │   ├── LoadingCard.tsx   # Card de loading
 │   └── Navigation.tsx    # Navegação principal
 ├── hooks/                # Hooks customizados
-│   ├── useEldenRingAPI.ts # Hook da API (classes)
+│   ├── useEldenRingAPI.ts # Hook genérico da API (classes, criaturas)
 │   └── useEldenRingWeapons.ts # Hook da API (armas)
 └── lib/                  # Utilitários
     ├── types.ts          # Tipos TypeScript
@@ -101,6 +104,7 @@ src/
 Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **📜 Classes**: `https://eldenring.fanapis.com/api/classes`
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
+- **🐾 Criaturas**: `https://eldenring.fanapis.com/api/creatures`
 - **👹 Chefes**: `https://eldenring.fanapis.com/api/bosses`
 
 ## 📝 Scripts Disponíveis
