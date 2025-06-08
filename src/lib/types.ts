@@ -51,6 +51,15 @@ export interface EldenRingWeapon {
 
 export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
 
+export interface EldenRingLocation {
+  id: string;
+  name: string;
+  image: string;
+  region: string;
+  description: string;
+}
+
+export type EldenRingLocationsResponse = EldenRingApiResponse<EldenRingLocation>;
 export interface EldenRingAmmo {
   id: string;
   name: string;

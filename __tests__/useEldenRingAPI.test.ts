@@ -1,5 +1,16 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { useEldenRingAPI } from '@/hooks/useEldenRingAPI';
+import { EldenRingLocation } from '@/lib/types';
+
+const mockLocations: EldenRingLocation[] = [
+  { id: 'loc1', name: 'Stormveil Castle', image: 'img.png', region: 'Limgrave', description: 'test' },
+];
+
+describe('useEldenRingAPI - locations', () => {
+  beforeEach(() => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ success: true, data: mockLocations }),
 
 const mockBosses = [
   { id: 'b1', name: 'Margit' },
@@ -18,6 +29,12 @@ describe('useEldenRingAPI - bosses', () => {
     jest.resetAllMocks();
   });
 
+  it('fetches locations data', async () => {
+    const { result } = renderHook(() => useEldenRingAPI<EldenRingLocation>('locations'));
+
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.data).toEqual(mockLocations);
   it('fetches bosses list', async () => {
     const { result } = renderHook(() => useEldenRingAPI('bosses'));
 
