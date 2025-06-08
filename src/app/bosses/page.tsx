@@ -2,11 +2,11 @@
 
 import { BossCard } from "@/components/BossCard";
 import { LoadingCard } from "@/components/LoadingCard";
-import { EldenRingBoss } from "@/lib/types";
+import { Boss } from "@/lib/types";
 import { useEldenRingAPI } from "@/hooks/useEldenRingAPI";
 
 export default function BossesPage() {
-  const { data: bosses, loading, error } = useEldenRingAPI<EldenRingBoss>("bosses");
+  const { data: bosses, loading, error } = useEldenRingAPI<Boss>("bosses");
 
   if (error) {
     return (

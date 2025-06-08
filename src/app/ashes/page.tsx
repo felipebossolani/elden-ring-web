@@ -2,11 +2,11 @@
 
 import { AshCard } from "@/components/AshCard";
 import { LoadingCard } from "@/components/LoadingCard";
-import { EldenRingAsh } from "@/lib/types";
+import { Ash } from "@/lib/types";
 import { useEldenRingAPI } from "@/hooks/useEldenRingAPI";
 
 export default function AshesPage() {
-  const { data: ashes, loading, error } = useEldenRingAPI<EldenRingAsh>("ashes");
+  const { data: ashes, loading, error } = useEldenRingAPI<Ash>("ashes");
 
   if (error) {
     return (

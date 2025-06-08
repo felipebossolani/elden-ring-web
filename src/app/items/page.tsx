@@ -2,11 +2,11 @@
 
 import { ItemCard } from "@/components/ItemCard";
 import { LoadingCard } from "@/components/LoadingCard";
-import { EldenRingItem } from "@/lib/types";
+import { Item } from "@/lib/types";
 import { useEldenRingAPI } from "@/hooks/useEldenRingAPI";
 
 export default function ItemsPage() {
-  const { data: items, loading, error } = useEldenRingAPI<EldenRingItem>("items");
+  const { data: items, loading, error } = useEldenRingAPI<Item>("items");
 
   if (error) {
     return (

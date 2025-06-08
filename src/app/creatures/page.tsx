@@ -2,11 +2,11 @@
 
 import { CreatureCard } from "@/components/CreatureCard";
 import { LoadingCard } from "@/components/LoadingCard";
-import { EldenRingCreature } from "@/lib/types";
+import { Creature } from "@/lib/types";
 import { useEldenRingAPI } from "@/hooks/useEldenRingAPI";
 
 export default function CreaturesPage() {
-  const { data: creatures, loading, error } = useEldenRingAPI<EldenRingCreature>("creatures");
+  const { data: creatures, loading, error } = useEldenRingAPI<Creature>("creatures");
 
   if (error) {
     return (

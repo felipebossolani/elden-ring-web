@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { EldenRingIncantation } from "@/lib/types";
+import { Incantation } from "@/lib/types";
 import Image from "next/image";
 
 interface IncantationCardProps {
-  incantation: EldenRingIncantation;
+  incantation: Incantation;
 }
 
 export function IncantationCard({ incantation }: IncantationCardProps) {

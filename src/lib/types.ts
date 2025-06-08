@@ -1,4 +1,4 @@
-export interface EldenRingClass {
+export interface Class {
   id: string;
   name: string;
   image: string;
@@ -16,15 +16,15 @@ export interface EldenRingClass {
   };
 }
 
-export interface EldenRingApiResponse<T> {
+export interface ApiResponse<T> {
   success: boolean;
   count: number;
   data: T[];
 }
 
-export type EldenRingClassesResponse = EldenRingApiResponse<EldenRingClass>;
+export type ClassesResponse = ApiResponse<Class>;
 
-export interface EldenRingWeapon {
+export interface Weapon {
   id: string;
   name: string;
   image: string;
@@ -49,9 +49,9 @@ export interface EldenRingWeapon {
   weight: number;
 }
 
-export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
+export type WeaponsResponse = ApiResponse<Weapon>;
 
-export interface EldenRingItem {
+export interface Item {
   id: string;
   name: string;
   image: string;
@@ -60,7 +60,7 @@ export interface EldenRingItem {
   effect: string;
 }
 
-export interface EldenRingTalisman {
+export interface Talisman {
   id: string;
   name: string;
   image: string;
@@ -68,9 +68,9 @@ export interface EldenRingTalisman {
   effect: string;
 }
 
-export type EldenRingTalismansResponse = EldenRingApiResponse<EldenRingTalisman>;
+export type TalismansResponse = ApiResponse<Talisman>;
 
-export interface EldenRingArmor {
+export interface Armor {
   id: string;
   name: string;
   image: string;
@@ -87,9 +87,9 @@ export interface EldenRingArmor {
   weight: number;
 }
 
-export type EldenRingArmorsResponse = EldenRingApiResponse<EldenRingArmor>;
+export type ArmorsResponse = ApiResponse<Armor>;
 
-export interface EldenRingCreature {
+export interface Creature {
   id: string;
   name: string;
   image: string;
@@ -98,9 +98,9 @@ export interface EldenRingCreature {
   drops: string[];
 }
 
-export type EldenRingCreaturesResponse = EldenRingApiResponse<EldenRingCreature>;
+export type CreaturesResponse = ApiResponse<Creature>;
 
-export interface EldenRingIncantation {
+export interface Incantation {
   id: string;
   name: string;
   image: string;
@@ -115,9 +115,9 @@ export interface EldenRingIncantation {
   }>;
 }
 
-export type EldenRingIncantationsResponse = EldenRingApiResponse<EldenRingIncantation>;
+export type IncantationsResponse = ApiResponse<Incantation>;
 
-export interface EldenRingSorcery {
+export interface Sorcery {
   id: string;
   name: string;
   image: string;
@@ -132,9 +132,9 @@ export interface EldenRingSorcery {
   }>;
 }
 
-export type EldenRingSorceriesResponse = EldenRingApiResponse<EldenRingSorcery>;
+export type SorceriesResponse = ApiResponse<Sorcery>;
 
-export interface EldenRingLocation {
+export interface Location {
   id: string;
   name: string;
   image: string;
@@ -142,9 +142,9 @@ export interface EldenRingLocation {
   description: string;
 }
 
-export type EldenRingLocationsResponse = EldenRingApiResponse<EldenRingLocation>;
+export type LocationsResponse = ApiResponse<Location>;
 
-export interface EldenRingAmmo {
+export interface Ammo {
   id: string;
   name: string;
   image: string;
@@ -157,9 +157,9 @@ export interface EldenRingAmmo {
   passive: string;
 }
 
-export type EldenRingAmmoResponse = EldenRingApiResponse<EldenRingAmmo>;
+export type AmmoResponse = ApiResponse<Ammo>;
 
-export interface EldenRingAsh {
+export interface Ash {
   id: string;
   name: string;
   image: string;
@@ -168,9 +168,9 @@ export interface EldenRingAsh {
   skill: string;
 }
 
-export type EldenRingAshesResponse = EldenRingApiResponse<EldenRingAsh>;
+export type AshesResponse = ApiResponse<Ash>;
 
-export interface EldenRingBoss {
+export interface Boss {
   id: string;
   name: string;
   image: string | null;
@@ -181,9 +181,9 @@ export interface EldenRingBoss {
   healthPoints: string;
 }
 
-export type EldenRingBossesResponse = EldenRingApiResponse<EldenRingBoss>;
+export type BossesResponse = ApiResponse<Boss>;
 
-export interface EldenRingNPC {
+export interface NPC {
   id: string;
   name: string;
   image: string;
@@ -192,7 +192,7 @@ export interface EldenRingNPC {
   role: string;
 }
 
-export type EldenRingNPCsResponse = EldenRingApiResponse<EldenRingNPC>;
+export type NPCsResponse = ApiResponse<NPC>;
 
 export interface PaginationInfo {
   currentPage: number;

@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { EldenRingLocation } from "@/lib/types";
+import { Location } from "@/lib/types";
 import Image from "next/image";
 
 interface LocationCardProps {
-  location: EldenRingLocation;
+  location: Location;
 }
 
 export function LocationCard({ location }: LocationCardProps) {

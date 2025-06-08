@@ -2,11 +2,11 @@
 
 import { LocationCard } from "@/components/LocationCard";
 import { LoadingCard } from "@/components/LoadingCard";
-import { EldenRingLocation } from "@/lib/types";
+import { Location } from "@/lib/types";
 import { useEldenRingAPI } from "@/hooks/useEldenRingAPI";
 
 export default function LocationsPage() {
-  const { data: locations, loading, error } = useEldenRingAPI<EldenRingLocation>("locations");
+  const { data: locations, loading, error } = useEldenRingAPI<Location>("locations");
 
   if (error) {
     return (

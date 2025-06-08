@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { EldenRingNPC } from "@/lib/types";
+import { NPC } from "@/lib/types";
 import Image from "next/image";
 
 interface NPCCardProps {
-  npc: EldenRingNPC;
+  npc: NPC;
 }
 
 export function NPCCard({ npc }: NPCCardProps) {

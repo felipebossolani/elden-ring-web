@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { EldenRingSorcery, PaginationInfo } from "@/lib/types";
+import { Sorcery, PaginationInfo } from "@/lib/types";
 
 interface UseSorceriesParams {
   page?: number;
@@ -8,7 +8,7 @@ interface UseSorceriesParams {
 }
 
 interface UseSorceriesResult {
-  sorceries: EldenRingSorcery[];
+  sorceries: Sorcery[];
   loading: boolean;
   error: string | null;
   pagination: PaginationInfo;
@@ -16,7 +16,7 @@ interface UseSorceriesResult {
 
 export function useEldenRingSorceries(params: UseSorceriesParams = {}): UseSorceriesResult {
   const { page = 0, limit = 20, search } = params;
-  const [sorceries, setSorceries] = useState<EldenRingSorcery[]>([]);
+  const [sorceries, setSorceries] = useState<Sorcery[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [pagination, setPagination] = useState<PaginationInfo>({

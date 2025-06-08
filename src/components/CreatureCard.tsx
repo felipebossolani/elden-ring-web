@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { EldenRingCreature } from "@/lib/types";
+import { Creature } from "@/lib/types";
 import Image from "next/image";
 
 interface CreatureCardProps {
-  creature: EldenRingCreature;
+  creature: Creature;
 }
 
 export function CreatureCard({ creature }: CreatureCardProps) {

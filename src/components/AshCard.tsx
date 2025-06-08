@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { EldenRingAsh } from "@/lib/types";
+import { Ash } from "@/lib/types";
 import Image from "next/image";
 
 interface AshCardProps {
-  ash: EldenRingAsh;
+  ash: Ash;
 }
 
 export function AshCard({ ash }: AshCardProps) {

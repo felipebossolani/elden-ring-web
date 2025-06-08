@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { EldenRingArmor, PaginationInfo } from "@/lib/types";
+import { Armor, PaginationInfo } from "@/lib/types";
 
 interface UseArmorsResult {
-  armors: EldenRingArmor[];
+  armors: Armor[];
   loading: boolean;
   error: string | null;
   pagination: PaginationInfo;
@@ -18,7 +18,7 @@ interface UseArmorsParams {
 }
 
 export function useEldenRingArmors(params: UseArmorsParams = {}): UseArmorsResult {
-  const [armors, setArmors] = useState<EldenRingArmor[]>([]);
+  const [armors, setArmors] = useState<Armor[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [categories, setCategories] = useState<string[]>([]);
@@ -43,7 +43,7 @@ export function useEldenRingArmors(params: UseArmorsParams = {}): UseArmorsResul
         const data = await response.json();
         if (data.success && data.data) {
           const uniqueCategories = Array.from(
-            new Set(data.data.map((armor: EldenRingArmor) => armor.category))
+            new Set(data.data.map((armor: Armor) => armor.category))
           ).filter(Boolean).sort() as string[];
           setCategories(uniqueCategories);
         }
@@ -79,7 +79,7 @@ export function useEldenRingArmors(params: UseArmorsParams = {}): UseArmorsResul
           let filteredArmors = data.data;
           if (category && category !== "all") {
             filteredArmors = filteredArmors.filter(
-              (armor: EldenRingArmor) => armor.category === category
+              (armor: Armor) => armor.category === category
             );
           }
           const shouldPaginateClient = (category && category !== "all") || !!search;

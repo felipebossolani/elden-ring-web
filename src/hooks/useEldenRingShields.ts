@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { EldenRingWeapon as EldenRingShield, PaginationInfo } from "@/lib/types";
+import { Weapon as Shield, PaginationInfo } from "@/lib/types";
 
 interface UseShieldsResult {
-  shields: EldenRingShield[];
+  shields: Shield[];
   loading: boolean;
   error: string | null;
   pagination: PaginationInfo;
@@ -18,7 +18,7 @@ interface UseShieldsParams {
 }
 
 export function useEldenRingShields(params: UseShieldsParams = {}): UseShieldsResult {
-  const [shields, setShields] = useState<EldenRingShield[]>([]);
+  const [shields, setShields] = useState<Shield[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [categories, setCategories] = useState<string[]>([]);
@@ -46,7 +46,7 @@ export function useEldenRingShields(params: UseShieldsParams = {}): UseShieldsRe
 
         if (data.success && data.data) {
           const uniqueCategories = Array.from(
-            new Set(data.data.map((shield: EldenRingShield) => shield.category))
+            new Set(data.data.map((shield: Shield) => shield.category))
           ).filter(Boolean).sort() as string[];
 
           setCategories(uniqueCategories);
@@ -89,7 +89,7 @@ export function useEldenRingShields(params: UseShieldsParams = {}): UseShieldsRe
           let filtered = data.data;
           if (category && category !== "all") {
             filtered = filtered.filter(
-              (shield: EldenRingShield) => shield.category === category
+              (shield: Shield) => shield.category === category
             );
           }
 
