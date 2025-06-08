@@ -122,6 +122,17 @@ export interface EldenRingSorcery {
 
 export type EldenRingSorceriesResponse = EldenRingApiResponse<EldenRingSorcery>;
 
+export interface EldenRingNPC {
+  id: string;
+  name: string;
+  image: string;
+  quote: string | null;
+  location: string;
+  role: string;
+}
+
+export type EldenRingNPCsResponse = EldenRingApiResponse<EldenRingNPC>;
+
 export interface PaginationInfo {
   currentPage: number;
   totalItems: number;
