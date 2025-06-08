@@ -26,11 +26,49 @@ export function Navigation() {
               <Link href="/locations">
                 <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
                   Locations
+              <Link href="/shields">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Shields
                 </Button>
               </Link>
               <Button variant="ghost" disabled className="text-muted-foreground">
                 Bosses
               </Button>
+              <Link href="/ammo">
+                <Link href="/sorceries">
+                <Link href="/npcs">
+                <Link href="/shields">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Shields
+                </Button>
+              </Link>
+              <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  NPCs
+                </Button>
+              </Link>
+              <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Sorceries
+                </Button>
+              </Link>
+              <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Ammo
+                </Button>
+              </Link>
+              <Link href="/ashes">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Ashes
+                </Button>
+              </Link>
+              <Link href="/ammo">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Ammo
+                </Button>
+              </Link>
+              <Link href="/bosses">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Bosses
+                </Button>
+              </Link>
             </div>
             
             {/* Theme Toggle */}

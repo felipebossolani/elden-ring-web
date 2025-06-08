@@ -95,6 +95,9 @@ export default function Home() {
                 <CardTitle className="font-medieval text-golden-light">Locations</CardTitle>
                 <CardDescription>
                   Key places scattered throughout the realms.
+                <CardTitle className="font-medieval text-golden-light">Ammo</CardTitle>
+                <CardDescription>
+                  Bolts, arrows and all ammunition for your weapons.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -104,6 +107,11 @@ export default function Home() {
                 <Link href="/locations">
                   <Button className="w-full bg-golden hover:bg-golden-dark text-background">
                     View Locations
+                  Prepare for battle with a variety of ammunition types.
+                </p>
+                <Link href="/ammo">
+                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
+                    View Ammo
                   </Button>
                 </Link>
               </CardContent>

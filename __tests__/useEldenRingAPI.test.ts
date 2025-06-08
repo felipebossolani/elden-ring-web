@@ -11,6 +11,17 @@ describe('useEldenRingAPI - locations', () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       json: async () => ({ success: true, data: mockLocations }),
+
+const mockBosses = [
+  { id: 'b1', name: 'Margit' },
+  { id: 'b2', name: 'Godrick' },
+];
+
+describe('useEldenRingAPI - bosses', () => {
+  beforeEach(() => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ success: true, data: mockBosses }),
     });
   });
 
@@ -24,6 +35,12 @@ describe('useEldenRingAPI - locations', () => {
     await waitFor(() => expect(result.current.loading).toBe(false));
 
     expect(result.current.data).toEqual(mockLocations);
+  it('fetches bosses list', async () => {
+    const { result } = renderHook(() => useEldenRingAPI('bosses'));
+
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.data).toEqual(mockBosses);
     expect(result.current.error).toBeNull();
   });
 });
