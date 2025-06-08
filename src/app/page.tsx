@@ -51,7 +51,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
               <CardHeader>
                 <CardTitle className="font-medieval text-golden-light">Classes</CardTitle>
@@ -107,62 +107,12 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="font-medieval text-golden-light">Ammo</CardTitle>
-                <CardDescription>
-                  Bolts, arrows and all ammunition for your weapons.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Prepare for battle with a variety of ammunition types.
-                </p>
-                <Link href="/ammo">
-                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
-                    View Ammo
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
 
-            <Card className="border-border/50 bg-card/80 backdrop-blur-sm opacity-60">
-              <CardHeader>
-                <CardTitle className="font-medieval text-muted-foreground">Bosses</CardTitle>
-                <CardDescription>
-                  Face the demigods and their champions (Coming Soon).
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Learn about the fearsome bosses that guard the shards of the Elden Ring.
-                </p>
-                <Button disabled className="w-full">
-                  Coming Soon
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-border/50 py-8 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-sm text-muted-foreground">
-            Built with the{" "}
-            <a 
-              href="https://docs.eldenring.fanapis.com/docs/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-golden hover:text-golden-light transition-colors"
-            >
-              Elden Ring Fan API
-            </a>
-            {" "}• Not affiliated with FromSoftware or BANDAI NAMCO
-          </p>
-        </div>
-      </footer>
+
     </div>
   );
 }
