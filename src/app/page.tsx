@@ -95,6 +95,22 @@ export default function Home() {
                 <CardTitle className="font-medieval text-golden-light">Creatures</CardTitle>
                 <CardDescription>
                   Encounter the beasts that roam the realm.
+                <CardTitle className="font-medieval text-golden-light">Items</CardTitle>
+                <CardDescription>Consumables and key items for every Tarnished.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Discover talismans, craftables and various items to aid you in your quest.
+                </p>
+                <Link href="/items">
+                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
+                    View Items
+                <CardTitle className="font-medieval text-golden-light">Locations</CardTitle>
+                <CardDescription>
+                  Key places scattered throughout the realms.
+                <CardTitle className="font-medieval text-golden-light">Ammo</CardTitle>
+                <CardDescription>
+                  Bolts, arrows and all ammunition for your weapons.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -104,6 +120,16 @@ export default function Home() {
                 <Link href="/creatures">
                   <Button className="w-full bg-golden hover:bg-golden-dark text-background">
                     View Creatures
+                  Venture across castles, dungeons and landmarks that shape your journey.
+                </p>
+                <Link href="/locations">
+                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
+                    View Locations
+                  Prepare for battle with a variety of ammunition types.
+                </p>
+                <Link href="/ammo">
+                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
+                    View Ammo
                   </Button>
                 </Link>
               </CardContent>

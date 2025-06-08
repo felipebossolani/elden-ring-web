@@ -49,6 +49,15 @@ export interface EldenRingWeapon {
   weight: number;
 }
 
+export interface EldenRingItem {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  type: string;
+  effect: string;
+}
+
 export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
 
 export interface EldenRingCreature {
@@ -61,6 +70,98 @@ export interface EldenRingCreature {
 }
 
 export type EldenRingCreaturesResponse = EldenRingApiResponse<EldenRingCreature>;
+export interface EldenRingIncantation {
+export interface EldenRingLocation {
+  id: string;
+  name: string;
+  image: string;
+  region: string;
+  description: string;
+}
+
+export type EldenRingLocationsResponse = EldenRingApiResponse<EldenRingLocation>;
+export interface EldenRingAmmo {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  type: string;
+  attackPower: Array<{
+    name: string;
+    amount: number;
+  }>;
+  passive: string;
+}
+
+export type EldenRingAmmoResponse = EldenRingApiResponse<EldenRingAmmo>;
+
+export interface EldenRingAsh {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  affinity: string;
+  skill: string;
+}
+
+export type EldenRingAshesResponse = EldenRingApiResponse<EldenRingAsh>;
+
+export interface EldenRingBoss {
+  id: string;
+  name: string;
+  image: string | null;
+  region: string;
+  description: string;
+  location: string;
+  drops: string[];
+  healthPoints: string;
+}
+
+export type EldenRingBossesResponse = EldenRingApiResponse<EldenRingBoss>;
+
+export interface EldenRingAmmo {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  type: string;
+  attackPower: Array<{
+    name: string;
+    amount: number;
+  }>;
+  passive: string;
+}
+
+export type EldenRingAmmoResponse = EldenRingApiResponse<EldenRingAmmo>;
+
+export interface EldenRingSorcery {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  type: string;
+  cost: number;
+  slots: number;
+  effects: string;
+  requires: Array<{
+    name: string;
+    amount: number;
+  }>;
+}
+export type EldenRingIncantationsResponse = EldenRingApiResponse<EldenRingIncantation>;
+
+export type EldenRingSorceriesResponse = EldenRingApiResponse<EldenRingSorcery>;
+
+export interface EldenRingNPC {
+  id: string;
+  name: string;
+  image: string;
+  quote: string | null;
+  location: string;
+  role: string;
+}
+
+export type EldenRingNPCsResponse = EldenRingApiResponse<EldenRingNPC>;
 
 export interface PaginationInfo {
   currentPage: number;
