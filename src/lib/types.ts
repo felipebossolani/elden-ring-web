@@ -51,6 +51,25 @@ export interface EldenRingWeapon {
 
 export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
 
+export interface EldenRingArmor {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  category: string;
+  dmgNegation: Array<{
+    name: string;
+    amount: number;
+  }>;
+  resistance: Array<{
+    name: string;
+    amount: number;
+  }>;
+  weight: number;
+}
+
+export type EldenRingArmorsResponse = EldenRingApiResponse<EldenRingArmor>;
+
 export interface PaginationInfo {
   currentPage: number;
   totalItems: number;
