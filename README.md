@@ -2,6 +2,8 @@
 
 Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construído com as mais modernas tecnologias web.
 
+Este repositório é um projeto de estudos, explorando a "vibe coding" ao mesclar o uso local do [Cursor](https://www.cursor.com/) com o [OpenAI&nbsp;Codex](https://platform.openai.com/docs/guides/code).
+
 ## ✨ Funcionalidades
 
 ### ✅ Implementado
@@ -28,7 +30,6 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
 - **🧑‍🤝‍🧑 NPCs**: Encontre comerciantes e aliados
   - Busca por nome do NPC
   - Paginação com 16 NPCs por página
-- **🛡️ Shields**: Defesas variadas para todos os estilos
 - **🌓 Dark/Light Mode**: Sistema completo de alternância de tema
   - Toggle na navegação superior direita
   - Persistência da preferência no localStorage
@@ -47,7 +48,7 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
 ## 🛠️ Tecnologias
 
 - **⚛️ React 19** + **Next.js 15** (App Router)
-- **🎨 Tailwind CSS** + **Tailwind CSS v4**
+- **🎨 Tailwind CSS v3** (pronto para a futura v4)
 - **🧱 shadcn/ui** - Componentes de alta qualidade
 - **📡 TypeScript** - Type safety
 - **🌐 Elden Ring Fan API** - Dados oficiais do jogo
@@ -79,57 +80,14 @@ http://localhost:3000
 
 ```
 src/
-├── app/                    # App Router do Next.js
-│   ├── classes/           # Página das classes
-│   ├── weapons/           # Página das armas
-│   ├── talismans/        # Página dos talismãs
-│   ├── armors/            # Página das armaduras
-│   ├── creatures/        # Página das criaturas
-│   ├── incantations/      # Página das incantações
-│   ├── shields/           # Página dos escudos
-│   ├── globals.css        # Estilos globais
-│   ├── layout.tsx         # Layout raiz
-│   └── page.tsx          # Página inicial
-├── components/            # Componentes React
-│   ├── ui/               # Componentes shadcn/ui
-│   ├── ClassCard.tsx     # Card das classes
-│   ├── WeaponCard.tsx    # Card das armas
-│   ├── TalismanCard.tsx  # Card dos talismãs
-│   ├── ArmorCard.tsx     # Card das armaduras
-│   ├── WeaponsFilters.tsx # Filtros das armas
-│   ├── ArmorsFilters.tsx # Filtros das armaduras
-│   ├── WeaponsPagination.tsx # Paginação das armas
-│   ├── TalismansFilters.tsx # Filtros dos talismãs
-│   ├── TalismansPagination.tsx # Paginação dos talismãs
-│   ├── LoadingCard.tsx   # Card de loading
-│   └── Navigation.tsx    # Navegação principal
-├── hooks/                # Hooks customizados
-│   ├── useEldenRingAPI.ts # Hook da API (classes)
-│   ├── useEldenRingWeapons.ts # Hook da API (armas)
-│   └── useEldenRingTalismans.ts # Hook da API (talismãs)
-│   ├── ArmorsPagination.tsx # Paginação das armaduras
-│   ├── CreatureCard.tsx  # Card das criaturas
-│   ├── IncantationCard.tsx # Card das incantações
-│   ├── WeaponsFilters.tsx # Filtros das armas
-│   ├── IncantationsFilters.tsx # Filtros das incantações
-│   ├── WeaponsPagination.tsx # Paginação das armas
-│   ├── NPCCard.tsx       # Card dos NPCs
-│   ├── NpcsFilters.tsx   # Filtros dos NPCs
-│   ├── NpcsPagination.tsx # Paginação dos NPCs
-│   ├── LoadingCard.tsx   # Card de loading
-│   └── Navigation.tsx    # Navegação principal
-├── hooks/                # Hooks customizados
-│   ├── useEldenRingAPI.ts # Hook genérico da API (classes, criaturas)
-│   └── useEldenRingWeapons.ts # Hook da API (armas)
-│   └── useEldenRingArmors.ts  # Hook da API (armaduras)
-│   ├── useEldenRingWeapons.ts # Hook da API (armas)
-│   └── useEldenRingShields.ts # Hook da API (escudos)
-│   ├── useEldenRingAPI.ts   # Hook da API (classes)
-│   ├── useEldenRingWeapons.ts # Hook da API (armas)
-│   └── useEldenRingNPCs.ts   # Hook da API (npcs)
-└── lib/                  # Utilitários
-    ├── types.ts          # Tipos TypeScript
-    └── utils.ts          # Funções utilitárias
+├── app/            # Páginas e rotas do Next.js
+│   ├── armors/
+│   ├── weapons/
+│   └── ...
+├── components/     # Componentes reutilizáveis
+│   └── ui/         # Base de UI (shadcn)
+├── hooks/          # Hooks de acesso à API
+└── lib/            # Tipos, contextos e utilidades
 ```
 
 ## 🎨 Design System
@@ -155,7 +113,6 @@ Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **🙏 Incantations**: `https://eldenring.fanapis.com/api/incantations`
 - **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **🧑‍🤝‍🧑 NPCs**: `https://eldenring.fanapis.com/api/npcs`
-- **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **👹 Chefes**: `https://eldenring.fanapis.com/api/bosses`
 
 ## 📝 Scripts Disponíveis
