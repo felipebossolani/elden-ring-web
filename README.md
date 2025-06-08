@@ -12,6 +12,10 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
   - Paginação com 16 armas por página
   - Cards detalhados com poder de ataque, scaling, requisitos e peso
   - Categorias e graus de scaling com código de cores
+- **🛡️ Armaduras**: Coleção completa das proteções do jogo
+  - Filtros por tipo (Helm, Chest Armor, Gauntlets, etc.)
+  - Busca por nome da armadura
+  - Paginação com 16 armaduras por página
 - **🐾 Criaturas**: Conheça as criaturas e monstros espalhados pelo mundo
 - **🙏 Incantations**: Milagres e encantamentos para aprimorar sua jornada
   - Busca por nome do feitiço
@@ -75,6 +79,7 @@ src/
 ├── app/                    # App Router do Next.js
 │   ├── classes/           # Página das classes
 │   ├── weapons/           # Página das armas
+│   ├── armors/            # Página das armaduras
 │   ├── creatures/        # Página das criaturas
 │   ├── incantations/      # Página das incantações
 │   ├── shields/           # Página dos escudos
@@ -85,6 +90,11 @@ src/
 │   ├── ui/               # Componentes shadcn/ui
 │   ├── ClassCard.tsx     # Card das classes
 │   ├── WeaponCard.tsx    # Card das armas
+│   ├── ArmorCard.tsx     # Card das armaduras
+│   ├── WeaponsFilters.tsx # Filtros das armas
+│   ├── ArmorsFilters.tsx # Filtros das armaduras
+│   ├── WeaponsPagination.tsx # Paginação das armas
+│   ├── ArmorsPagination.tsx # Paginação das armaduras
 │   ├── CreatureCard.tsx  # Card das criaturas
 │   ├── IncantationCard.tsx # Card das incantações
 │   ├── WeaponsFilters.tsx # Filtros das armas
@@ -98,6 +108,7 @@ src/
 ├── hooks/                # Hooks customizados
 │   ├── useEldenRingAPI.ts # Hook genérico da API (classes, criaturas)
 │   └── useEldenRingWeapons.ts # Hook da API (armas)
+│   └── useEldenRingArmors.ts  # Hook da API (armaduras)
 │   ├── useEldenRingWeapons.ts # Hook da API (armas)
 │   └── useEldenRingShields.ts # Hook da API (escudos)
 │   ├── useEldenRingAPI.ts   # Hook da API (classes)
@@ -125,6 +136,7 @@ src/
 Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **📜 Classes**: `https://eldenring.fanapis.com/api/classes`
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
+- **🛡️ Armaduras**: `https://eldenring.fanapis.com/api/armors`
 - **🐾 Criaturas**: `https://eldenring.fanapis.com/api/creatures`
 - **🙏 Incantations**: `https://eldenring.fanapis.com/api/incantations`
 - **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
@@ -159,3 +171,4 @@ Este projeto não é oficialmente afiliado à FromSoftware ou BANDAI NAMCO.
 ---
 
 **⚡ "Rise, Tarnished, and be guided by grace"**
+

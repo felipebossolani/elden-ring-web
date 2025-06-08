@@ -92,6 +92,16 @@ export default function Home() {
 
             <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
               <CardHeader>
+                <CardTitle className="font-medieval text-golden-light">Armors</CardTitle>
+                <CardDescription>Protect yourself with legendary gear.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Browse helmets, chest pieces and more to forge the perfect defense.
+                </p>
+                <Link href="/armors">
+                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
+                    View Armors
                 <CardTitle className="font-medieval text-golden-light">Ammo</CardTitle>
                 <CardDescription>
                   Bolts, arrows and all ammunition for your weapons.
@@ -149,3 +159,4 @@ export default function Home() {
     </div>
   );
 }
+
