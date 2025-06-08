@@ -12,6 +12,7 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
   - Paginação com 16 armas por página
   - Cards detalhados com poder de ataque, scaling, requisitos e peso
   - Categorias e graus de scaling com código de cores
+- **🐾 Criaturas**: Conheça as criaturas e monstros espalhados pelo mundo
 - **🙏 Incantations**: Milagres e encantamentos para aprimorar sua jornada
   - Busca por nome do feitiço
   - Paginação com 16 resultados por página
@@ -74,6 +75,7 @@ src/
 ├── app/                    # App Router do Next.js
 │   ├── classes/           # Página das classes
 │   ├── weapons/           # Página das armas
+│   ├── creatures/        # Página das criaturas
 │   ├── incantations/      # Página das incantações
 │   ├── shields/           # Página dos escudos
 │   ├── globals.css        # Estilos globais
@@ -83,6 +85,7 @@ src/
 │   ├── ui/               # Componentes shadcn/ui
 │   ├── ClassCard.tsx     # Card das classes
 │   ├── WeaponCard.tsx    # Card das armas
+│   ├── CreatureCard.tsx  # Card das criaturas
 │   ├── IncantationCard.tsx # Card das incantações
 │   ├── WeaponsFilters.tsx # Filtros das armas
 │   ├── IncantationsFilters.tsx # Filtros das incantações
@@ -93,7 +96,7 @@ src/
 │   ├── LoadingCard.tsx   # Card de loading
 │   └── Navigation.tsx    # Navegação principal
 ├── hooks/                # Hooks customizados
-│   ├── useEldenRingAPI.ts # Hook da API (classes)
+│   ├── useEldenRingAPI.ts # Hook genérico da API (classes, criaturas)
 │   └── useEldenRingWeapons.ts # Hook da API (armas)
 │   ├── useEldenRingWeapons.ts # Hook da API (armas)
 │   └── useEldenRingShields.ts # Hook da API (escudos)
@@ -122,6 +125,7 @@ src/
 Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **📜 Classes**: `https://eldenring.fanapis.com/api/classes`
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
+- **🐾 Criaturas**: `https://eldenring.fanapis.com/api/creatures`
 - **🙏 Incantations**: `https://eldenring.fanapis.com/api/incantations`
 - **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **🧑‍🤝‍🧑 NPCs**: `https://eldenring.fanapis.com/api/npcs`

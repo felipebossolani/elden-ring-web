@@ -60,6 +60,16 @@ export interface EldenRingItem {
 
 export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
 
+export interface EldenRingCreature {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  location: string;
+  drops: string[];
+}
+
+export type EldenRingCreaturesResponse = EldenRingApiResponse<EldenRingCreature>;
 export interface EldenRingIncantation {
 export interface EldenRingLocation {
   id: string;

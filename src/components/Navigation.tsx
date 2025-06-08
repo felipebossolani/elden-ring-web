@@ -23,6 +23,9 @@ export function Navigation() {
                   Weapons
                 </Button>
               </Link>
+              <Link href="/creatures">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Creatures
               <Link href="/incantations">
                 <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
                   Incantations
