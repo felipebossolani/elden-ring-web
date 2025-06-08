@@ -26,6 +26,9 @@ export function Navigation() {
               <Link href="/armors">
                 <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
                   Armors
+              <Link href="/ammo">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Ammo
                 </Button>
               </Link>
               <Button variant="ghost" disabled className="text-muted-foreground">

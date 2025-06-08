@@ -16,6 +16,16 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
   - Filtros por tipo (Helm, Chest Armor, Gauntlets, etc.)
   - Busca por nome da armadura
   - Paginação com 16 armaduras por página
+- **🐾 Criaturas**: Conheça as criaturas e monstros espalhados pelo mundo
+- **🙏 Incantations**: Milagres e encantamentos para aprimorar sua jornada
+  - Busca por nome do feitiço
+  - Paginação com 16 resultados por página
+- **🛡️ Shields**: Defesas variadas para todos os estilos
+- **🔥 Ashes of War**: Lista completa de cinzas com afinidade e skill
+- **🧑‍🤝‍🧑 NPCs**: Encontre comerciantes e aliados
+  - Busca por nome do NPC
+  - Paginação com 16 NPCs por página
+- **🛡️ Shields**: Defesas variadas para todos os estilos
 - **🌓 Dark/Light Mode**: Sistema completo de alternância de tema
   - Toggle na navegação superior direita
   - Persistência da preferência no localStorage
@@ -70,6 +80,9 @@ src/
 │   ├── classes/           # Página das classes
 │   ├── weapons/           # Página das armas
 │   ├── armors/            # Página das armaduras
+│   ├── creatures/        # Página das criaturas
+│   ├── incantations/      # Página das incantações
+│   ├── shields/           # Página dos escudos
 │   ├── globals.css        # Estilos globais
 │   ├── layout.tsx         # Layout raiz
 │   └── page.tsx          # Página inicial
@@ -82,12 +95,25 @@ src/
 │   ├── ArmorsFilters.tsx # Filtros das armaduras
 │   ├── WeaponsPagination.tsx # Paginação das armas
 │   ├── ArmorsPagination.tsx # Paginação das armaduras
+│   ├── CreatureCard.tsx  # Card das criaturas
+│   ├── IncantationCard.tsx # Card das incantações
+│   ├── WeaponsFilters.tsx # Filtros das armas
+│   ├── IncantationsFilters.tsx # Filtros das incantações
+│   ├── WeaponsPagination.tsx # Paginação das armas
+│   ├── NPCCard.tsx       # Card dos NPCs
+│   ├── NpcsFilters.tsx   # Filtros dos NPCs
+│   ├── NpcsPagination.tsx # Paginação dos NPCs
 │   ├── LoadingCard.tsx   # Card de loading
 │   └── Navigation.tsx    # Navegação principal
 ├── hooks/                # Hooks customizados
-│   ├── useEldenRingAPI.ts # Hook da API (classes)
+│   ├── useEldenRingAPI.ts # Hook genérico da API (classes, criaturas)
 │   └── useEldenRingWeapons.ts # Hook da API (armas)
 │   └── useEldenRingArmors.ts  # Hook da API (armaduras)
+│   ├── useEldenRingWeapons.ts # Hook da API (armas)
+│   └── useEldenRingShields.ts # Hook da API (escudos)
+│   ├── useEldenRingAPI.ts   # Hook da API (classes)
+│   ├── useEldenRingWeapons.ts # Hook da API (armas)
+│   └── useEldenRingNPCs.ts   # Hook da API (npcs)
 └── lib/                  # Utilitários
     ├── types.ts          # Tipos TypeScript
     └── utils.ts          # Funções utilitárias
@@ -111,6 +137,11 @@ Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **📜 Classes**: `https://eldenring.fanapis.com/api/classes`
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
 - **🛡️ Armaduras**: `https://eldenring.fanapis.com/api/armors`
+- **🐾 Criaturas**: `https://eldenring.fanapis.com/api/creatures`
+- **🙏 Incantations**: `https://eldenring.fanapis.com/api/incantations`
+- **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
+- **🧑‍🤝‍🧑 NPCs**: `https://eldenring.fanapis.com/api/npcs`
+- **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **👹 Chefes**: `https://eldenring.fanapis.com/api/bosses`
 
 ## 📝 Scripts Disponíveis

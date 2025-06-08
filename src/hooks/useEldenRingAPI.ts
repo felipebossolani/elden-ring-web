@@ -6,7 +6,10 @@ interface UseApiResult<T> {
   error: string | null;
 }
 
-export function useEldenRingAPI<T>(endpoint: string): UseApiResult<T> {
+export function useEldenRingAPI<T>(
+  endpoint: string,
+  params: Record<string, string> = {}
+): UseApiResult<T> {
   const [data, setData] = useState<T[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -16,8 +19,15 @@ export function useEldenRingAPI<T>(endpoint: string): UseApiResult<T> {
       try {
         setLoading(true);
         setError(null);
-        
-        const response = await fetch(`https://eldenring.fanapis.com/api/${endpoint}`);
+
+        const url = new URL(
+          `https://eldenring.fanapis.com/api/${endpoint}`
+        );
+        Object.entries(params).forEach(([key, value]) => {
+          url.searchParams.append(key, value);
+        });
+
+        const response = await fetch(url.toString());
         
         if (!response.ok) {
           throw new Error(`Failed to fetch ${endpoint}`);
@@ -38,7 +48,7 @@ export function useEldenRingAPI<T>(endpoint: string): UseApiResult<T> {
     };
 
     fetchData();
-  }, [endpoint]);
+  }, [endpoint, JSON.stringify(params)]);
 
   return { data, loading, error };
 } 
