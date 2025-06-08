@@ -23,14 +23,31 @@ export function Navigation() {
                   Weapons
                 </Button>
               </Link>
-              <Link href="/sorceries">
+              <Link href="/ammo">
+                <Link href="/sorceries">
                 <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
                   Sorceries
                 </Button>
               </Link>
-              <Button variant="ghost" disabled className="text-muted-foreground">
-                Bosses
-              </Button>
+              <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Ammo
+                </Button>
+              </Link>
+              <Link href="/ashes">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Ashes
+                </Button>
+              </Link>
+              <Link href="/ammo">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Ammo
+                </Button>
+              </Link>
+              <Link href="/bosses">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Bosses
+                </Button>
+              </Link>
             </div>
             
             {/* Theme Toggle */}
