@@ -24,7 +24,12 @@ export function Navigation() {
                 </Button>
               </Link>
               <Link href="/ammo">
+                <Link href="/sorceries">
                 <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Sorceries
+                </Button>
+              </Link>
+              <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
                   Ammo
                 </Button>
               </Link>
