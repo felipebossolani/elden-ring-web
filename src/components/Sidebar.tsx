@@ -24,7 +24,7 @@ import {
 const menuItems = [
   { href: "/ammo", label: "Ammo", icon: Target },
   { href: "/armors", label: "Armors", icon: Shield },
-  { href: "/ashes", label: "Ashes", icon: FlameKindling },
+  { href: "/ashes", label: "Ashes of War", icon: FlameKindling },
   { href: "/bosses", label: "Bosses", icon: Crown },
   { href: "/classes", label: "Classes", icon: Users },
   { href: "/creatures", label: "Creatures", icon: Crown },
