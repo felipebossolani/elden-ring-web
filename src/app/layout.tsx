@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import { Geist, Geist_Mono, Cinzel } from "next/font/google";
 import { Navigation } from "@/components/Navigation";
 import { Sidebar } from "@/components/Sidebar";
@@ -20,32 +22,30 @@ const cinzel = Cinzel({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Elden Ring - The Lands Between Guide",
-  description: "Explore the classes, weapons, and lore of Elden Ring. Your guide to The Lands Between.",
-  keywords: ["elden ring", "classes", "weapons", "fromsoft", "dark souls", "guides"],
-  authors: [{ name: "Elden Ring Fan" }],
-  creator: "Elden Ring Fan",
-  openGraph: {
-    title: "Elden Ring - The Lands Between Guide",
-    description: "Explore the classes, weapons, and lore of Elden Ring",
-    type: "website",
-  },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <html lang="en" className="dark">
+      <head>
+        <title>Elden Ring - The Lands Between Guide</title>
+        <meta name="description" content="Explore the classes, weapons, and lore of Elden Ring. Your guide to The Lands Between." />
+        <meta name="keywords" content="elden ring, classes, weapons, fromsoft, dark souls, guides" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} antialiased bg-background text-foreground`}
       >
-        <Sidebar />
-        <Navigation />
-        <main className="pt-20 pl-64">
+        <Sidebar 
+          isOpen={sidebarOpen} 
+          onClose={() => setSidebarOpen(false)} 
+        />
+        <Navigation onMenuClick={() => setSidebarOpen(true)} />
+        <main className="pt-20 lg:pl-64 transition-all duration-300">
           {children}
         </main>
       </body>

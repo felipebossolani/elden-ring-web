@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -14,7 +17,8 @@ import {
   FlameKindling,
   User,
   Zap,
-  ShieldCheck
+  ShieldCheck,
+  X
 } from "lucide-react";
 
 const menuItems = [
@@ -34,52 +38,97 @@ const menuItems = [
   { href: "/weapons", label: "Weapons", icon: Sword },
 ];
 
-export function Sidebar() {
+interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export function Sidebar({ isOpen, onClose }: SidebarProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   return (
-    <aside className="fixed left-0 top-0 z-40 h-screen w-64 bg-background/95 backdrop-blur-sm border-r border-border/50">
-      <div className="flex h-full flex-col">
-        {/* Logo */}
-        <div className="p-6 border-b border-border/50">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="font-medieval text-xl text-golden-light">ELDEN RING</span>
-          </Link>
-        </div>
+    <>
+      {/* Mobile Overlay */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden" 
+          onClick={onClose}
+        />
+      )}
 
-        {/* Navigation Menu */}
-        <ScrollArea className="flex-1 px-3 py-6">
-          <div className="space-y-1">
-            {menuItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link key={item.href} href={item.href}>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start space-x-3 h-11 text-foreground hover:text-golden hover:bg-golden/10 transition-colors duration-200"
-                  >
-                    <Icon className="h-4 w-4" />
-                    <span>{item.label}</span>
-                  </Button>
-                </Link>
-              );
-            })}
+      {/* Sidebar */}
+      <aside className={`
+        fixed left-0 top-0 z-50 h-screen w-64 bg-background/95 backdrop-blur-sm border-r border-border/50 
+        transform transition-transform duration-300 ease-in-out
+        lg:translate-x-0
+        ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+      `}>
+        <div className="flex h-full flex-col">
+          {/* Header with Close Button for Mobile */}
+          <div className="p-6 border-b border-border/50">
+            <div className="flex items-center justify-between">
+              <Link href="/" className="flex items-center space-x-2" onClick={onClose}>
+                <span className="font-medieval text-xl text-golden-light">ELDEN RING</span>
+              </Link>
+              
+              {/* Close button for mobile */}
+              <Button
+                variant="ghost"
+                size="sm"
+                className="lg:hidden text-muted-foreground hover:text-foreground"
+                onClick={onClose}
+              >
+                <X className="h-5 w-5" />
+              </Button>
+            </div>
           </div>
-        </ScrollArea>
 
-        {/* Footer */}
-        <div className="p-4 border-t border-border/50">
-          <p className="text-xs text-muted-foreground text-center">
-            Built with{" "}
-            <a 
-              href="https://docs.eldenring.fanapis.com/docs/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-golden hover:text-golden-light transition-colors"
-            >
-              Elden Ring Fan API
-            </a>
-          </p>
+          {/* Navigation Menu */}
+          <ScrollArea className="flex-1 px-3 py-6">
+            <div className="space-y-1">
+              {menuItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link key={item.href} href={item.href} onClick={onClose}>
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-start space-x-3 h-11 text-foreground hover:text-golden hover:bg-golden/10 transition-colors duration-200"
+                    >
+                      <Icon className="h-4 w-4" />
+                      <span>{item.label}</span>
+                    </Button>
+                  </Link>
+                );
+              })}
+            </div>
+          </ScrollArea>
+
+          {/* Footer */}
+          <div className="p-4 border-t border-border/50">
+            <p className="text-xs text-muted-foreground text-center">
+              Built with{" "}
+              <a 
+                href="https://docs.eldenring.fanapis.com/docs/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-golden hover:text-golden-light transition-colors"
+              >
+                Elden Ring Fan API
+              </a>
+            </p>
+          </div>
         </div>
-      </div>
-    </aside>
+      </aside>
+    </>
   );
 } 
