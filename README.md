@@ -12,6 +12,7 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
   - Paginação com 16 armas por página
   - Cards detalhados com poder de ataque, scaling, requisitos e peso
   - Categorias e graus de scaling com código de cores
+- **🔥 Ashes of War**: Lista completa de cinzas com afinidade e skill
 - **🌓 Dark/Light Mode**: Sistema completo de alternância de tema
   - Toggle na navegação superior direita
   - Persistência da preferência no localStorage
