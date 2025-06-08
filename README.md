@@ -12,6 +12,7 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
   - Paginação com 16 armas por página
   - Cards detalhados com poder de ataque, scaling, requisitos e peso
   - Categorias e graus de scaling com código de cores
+- **🛡️ Shields**: Defesas variadas para todos os estilos
 - **🔥 Ashes of War**: Lista completa de cinzas com afinidade e skill
 - **🧑‍🤝‍🧑 NPCs**: Encontre comerciantes e aliados
   - Busca por nome do NPC
@@ -88,6 +89,11 @@ src/
 ├── hooks/                # Hooks customizados
 │   ├── useEldenRingAPI.ts # Hook da API (classes)
 │   └── useEldenRingWeapons.ts # Hook da API (armas)
+│   ├── useEldenRingWeapons.ts # Hook da API (armas)
+│   └── useEldenRingShields.ts # Hook da API (escudos)
+│   ├── useEldenRingAPI.ts   # Hook da API (classes)
+│   ├── useEldenRingWeapons.ts # Hook da API (armas)
+│   └── useEldenRingNPCs.ts   # Hook da API (npcs)
 └── lib/                  # Utilitários
     ├── types.ts          # Tipos TypeScript
     └── utils.ts          # Funções utilitárias
@@ -110,6 +116,7 @@ src/
 Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **📜 Classes**: `https://eldenring.fanapis.com/api/classes`
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
+- **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **🧑‍🤝‍🧑 NPCs**: `https://eldenring.fanapis.com/api/npcs`
 - **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **👹 Chefes**: `https://eldenring.fanapis.com/api/bosses`
