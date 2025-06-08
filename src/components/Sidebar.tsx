@@ -75,7 +75,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
       `}>
         <div className="flex h-full flex-col">
           {/* Header with Close Button for Mobile */}
-          <div className="flex-shrink-0 p-4 border-b border-border/50">
+          <div className="flex-shrink-0 px-6 py-4 border-b border-border/50">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center space-x-2" onClick={onClose}>
                 <span className="font-medieval text-lg text-golden-light">ELDEN RING</span>
