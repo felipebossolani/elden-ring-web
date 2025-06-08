@@ -2,21 +2,19 @@ import { Button } from "@/components/ui/button";
 import { PaginationInfo } from "@/lib/types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-interface WeaponsPaginationProps {
+interface ArmorsPaginationProps {
   pagination: PaginationInfo;
   onPageChange: (page: number) => void;
   loading: boolean;
-  itemLabel?: string;
 }
 
-export function WeaponsPagination({
+export function ArmorsPagination({
   pagination,
   onPageChange,
   loading,
-  itemLabel = "weapons",
-}: WeaponsPaginationProps) {
+}: ArmorsPaginationProps) {
   const { currentPage, totalPages, totalItems, itemsPerPage } = pagination;
-  
+
   if (totalPages <= 1) return null;
 
   const startItem = (currentPage - 1) * itemsPerPage + 1;
@@ -25,18 +23,18 @@ export function WeaponsPagination({
   const generatePageNumbers = () => {
     const pages = [];
     const maxVisiblePages = 5;
-    
+
     let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
     const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-    
+
     if (endPage - startPage < maxVisiblePages - 1) {
       startPage = Math.max(1, endPage - maxVisiblePages + 1);
     }
-    
+
     for (let i = startPage; i <= endPage; i++) {
       pages.push(i);
     }
-    
+
     return pages;
   };
 
@@ -45,9 +43,9 @@ export function WeaponsPagination({
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
       <div className="text-sm text-muted-foreground">
-        Showing {startItem}-{endItem} of {totalItems} {itemLabel}
+        Showing {startItem}-{endItem} of {totalItems} armors
       </div>
-      
+
       <div className="flex items-center gap-2">
         <Button
           variant="outline"
@@ -126,4 +124,5 @@ export function WeaponsPagination({
       </div>
     </div>
   );
-} 
+}
+
