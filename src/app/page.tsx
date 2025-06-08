@@ -90,6 +90,23 @@ export default function Home() {
               </CardContent>
             </Card>
 
+            <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="font-medieval text-golden-light">Items</CardTitle>
+                <CardDescription>Consumables and key items for every Tarnished.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Discover talismans, craftables and various items to aid you in your quest.
+                </p>
+                <Link href="/items">
+                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
+                    View Items
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
             <Card className="border-border/50 bg-card/80 backdrop-blur-sm opacity-60">
               <CardHeader>
                 <CardTitle className="font-medieval text-muted-foreground">Bosses</CardTitle>

@@ -49,6 +49,15 @@ export interface EldenRingWeapon {
   weight: number;
 }
 
+export interface EldenRingItem {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  type: string;
+  effect: string;
+}
+
 export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
 
 export interface PaginationInfo {
