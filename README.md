@@ -12,6 +12,9 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
   - Paginação com 16 armas por página
   - Cards detalhados com poder de ataque, scaling, requisitos e peso
   - Categorias e graus de scaling com código de cores
+- **💍 Talismãs**: Lista de todos os talismãs do jogo
+  - Busca por nome
+  - Paginação com 16 itens por página
 - **🌓 Dark/Light Mode**: Sistema completo de alternância de tema
   - Toggle na navegação superior direita
   - Persistência da preferência no localStorage
@@ -65,6 +68,7 @@ src/
 ├── app/                    # App Router do Next.js
 │   ├── classes/           # Página das classes
 │   ├── weapons/           # Página das armas
+│   ├── talismans/        # Página dos talismãs
 │   ├── globals.css        # Estilos globais
 │   ├── layout.tsx         # Layout raiz
 │   └── page.tsx          # Página inicial
@@ -72,13 +76,17 @@ src/
 │   ├── ui/               # Componentes shadcn/ui
 │   ├── ClassCard.tsx     # Card das classes
 │   ├── WeaponCard.tsx    # Card das armas
+│   ├── TalismanCard.tsx  # Card dos talismãs
 │   ├── WeaponsFilters.tsx # Filtros das armas
 │   ├── WeaponsPagination.tsx # Paginação das armas
+│   ├── TalismansFilters.tsx # Filtros dos talismãs
+│   ├── TalismansPagination.tsx # Paginação dos talismãs
 │   ├── LoadingCard.tsx   # Card de loading
 │   └── Navigation.tsx    # Navegação principal
 ├── hooks/                # Hooks customizados
 │   ├── useEldenRingAPI.ts # Hook da API (classes)
-│   └── useEldenRingWeapons.ts # Hook da API (armas)
+│   ├── useEldenRingWeapons.ts # Hook da API (armas)
+│   └── useEldenRingTalismans.ts # Hook da API (talismãs)
 └── lib/                  # Utilitários
     ├── types.ts          # Tipos TypeScript
     └── utils.ts          # Funções utilitárias
@@ -101,6 +109,7 @@ src/
 Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **📜 Classes**: `https://eldenring.fanapis.com/api/classes`
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
+- **💍 Talismãs**: `https://eldenring.fanapis.com/api/talismans`
 - **👹 Chefes**: `https://eldenring.fanapis.com/api/bosses`
 
 ## 📝 Scripts Disponíveis

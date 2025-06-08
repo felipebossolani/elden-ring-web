@@ -51,6 +51,16 @@ export interface EldenRingWeapon {
 
 export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
 
+export interface EldenRingTalisman {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  effect: string;
+}
+
+export type EldenRingTalismansResponse = EldenRingApiResponse<EldenRingTalisman>;
+
 export interface PaginationInfo {
   currentPage: number;
   totalItems: number;
