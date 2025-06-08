@@ -66,6 +66,17 @@ export interface EldenRingAmmo {
 
 export type EldenRingAmmoResponse = EldenRingApiResponse<EldenRingAmmo>;
 
+export interface EldenRingAsh {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  affinity: string;
+  skill: string;
+}
+
+export type EldenRingAshesResponse = EldenRingApiResponse<EldenRingAsh>;
+
 export interface PaginationInfo {
   currentPage: number;
   totalItems: number;
