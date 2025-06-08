@@ -51,6 +51,32 @@ export interface EldenRingWeapon {
 
 export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
 
+export interface EldenRingAmmo {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  type: string;
+  attackPower: Array<{
+    name: string;
+    amount: number;
+  }>;
+  passive: string;
+}
+
+export type EldenRingAmmoResponse = EldenRingApiResponse<EldenRingAmmo>;
+
+export interface EldenRingAsh {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  affinity: string;
+  skill: string;
+}
+
+export type EldenRingAshesResponse = EldenRingApiResponse<EldenRingAsh>;
+
 export interface EldenRingBoss {
   id: string;
   name: string;
