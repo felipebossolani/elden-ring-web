@@ -49,6 +49,8 @@ export interface EldenRingWeapon {
   weight: number;
 }
 
+export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
+
 export interface EldenRingItem {
   id: string;
   name: string;
@@ -58,7 +60,15 @@ export interface EldenRingItem {
   effect: string;
 }
 
-export type EldenRingWeaponsResponse = EldenRingApiResponse<EldenRingWeapon>;
+export interface EldenRingTalisman {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  effect: string;
+}
+
+export type EldenRingTalismansResponse = EldenRingApiResponse<EldenRingTalisman>;
 
 export interface EldenRingArmor {
   id: string;
@@ -106,6 +116,23 @@ export interface EldenRingIncantation {
 }
 
 export type EldenRingIncantationsResponse = EldenRingApiResponse<EldenRingIncantation>;
+
+export interface EldenRingSorcery {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  type: string;
+  cost: number;
+  slots: number;
+  effects: string;
+  requires: Array<{
+    name: string;
+    amount: number;
+  }>;
+}
+
+export type EldenRingSorceriesResponse = EldenRingApiResponse<EldenRingSorcery>;
 
 export interface EldenRingLocation {
   id: string;
@@ -155,23 +182,6 @@ export interface EldenRingBoss {
 }
 
 export type EldenRingBossesResponse = EldenRingApiResponse<EldenRingBoss>;
-
-export interface EldenRingSorcery {
-  id: string;
-  name: string;
-  image: string;
-  description: string;
-  type: string;
-  cost: number;
-  slots: number;
-  effects: string;
-  requires: Array<{
-    name: string;
-    amount: number;
-  }>;
-}
-
-export type EldenRingSorceriesResponse = EldenRingApiResponse<EldenRingSorcery>;
 
 export interface EldenRingNPC {
   id: string;

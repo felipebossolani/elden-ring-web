@@ -12,6 +12,9 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
   - Paginação com 16 armas por página
   - Cards detalhados com poder de ataque, scaling, requisitos e peso
   - Categorias e graus de scaling com código de cores
+- **💍 Talismãs**: Lista de todos os talismãs do jogo
+  - Busca por nome
+  - Paginação com 16 itens por página
 - **🛡️ Armaduras**: Coleção completa das proteções do jogo
   - Filtros por tipo (Helm, Chest Armor, Gauntlets, etc.)
   - Busca por nome da armadura
@@ -79,6 +82,7 @@ src/
 ├── app/                    # App Router do Next.js
 │   ├── classes/           # Página das classes
 │   ├── weapons/           # Página das armas
+│   ├── talismans/        # Página dos talismãs
 │   ├── armors/            # Página das armaduras
 │   ├── creatures/        # Página das criaturas
 │   ├── incantations/      # Página das incantações
@@ -90,10 +94,19 @@ src/
 │   ├── ui/               # Componentes shadcn/ui
 │   ├── ClassCard.tsx     # Card das classes
 │   ├── WeaponCard.tsx    # Card das armas
+│   ├── TalismanCard.tsx  # Card dos talismãs
 │   ├── ArmorCard.tsx     # Card das armaduras
 │   ├── WeaponsFilters.tsx # Filtros das armas
 │   ├── ArmorsFilters.tsx # Filtros das armaduras
 │   ├── WeaponsPagination.tsx # Paginação das armas
+│   ├── TalismansFilters.tsx # Filtros dos talismãs
+│   ├── TalismansPagination.tsx # Paginação dos talismãs
+│   ├── LoadingCard.tsx   # Card de loading
+│   └── Navigation.tsx    # Navegação principal
+├── hooks/                # Hooks customizados
+│   ├── useEldenRingAPI.ts # Hook da API (classes)
+│   ├── useEldenRingWeapons.ts # Hook da API (armas)
+│   └── useEldenRingTalismans.ts # Hook da API (talismãs)
 │   ├── ArmorsPagination.tsx # Paginação das armaduras
 │   ├── CreatureCard.tsx  # Card das criaturas
 │   ├── IncantationCard.tsx # Card das incantações
@@ -136,6 +149,7 @@ src/
 Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **📜 Classes**: `https://eldenring.fanapis.com/api/classes`
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
+- **💍 Talismãs**: `https://eldenring.fanapis.com/api/talismans`
 - **🛡️ Armaduras**: `https://eldenring.fanapis.com/api/armors`
 - **🐾 Criaturas**: `https://eldenring.fanapis.com/api/creatures`
 - **🙏 Incantations**: `https://eldenring.fanapis.com/api/incantations`
