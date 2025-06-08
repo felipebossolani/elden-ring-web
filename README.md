@@ -12,6 +12,7 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
   - Paginação com 16 armas por página
   - Cards detalhados com poder de ataque, scaling, requisitos e peso
   - Categorias e graus de scaling com código de cores
+- **🛡️ Shields**: Defesas variadas para todos os estilos
 - **🌓 Dark/Light Mode**: Sistema completo de alternância de tema
   - Toggle na navegação superior direita
   - Persistência da preferência no localStorage
@@ -65,6 +66,7 @@ src/
 ├── app/                    # App Router do Next.js
 │   ├── classes/           # Página das classes
 │   ├── weapons/           # Página das armas
+│   ├── shields/           # Página dos escudos
 │   ├── globals.css        # Estilos globais
 │   ├── layout.tsx         # Layout raiz
 │   └── page.tsx          # Página inicial
@@ -78,7 +80,8 @@ src/
 │   └── Navigation.tsx    # Navegação principal
 ├── hooks/                # Hooks customizados
 │   ├── useEldenRingAPI.ts # Hook da API (classes)
-│   └── useEldenRingWeapons.ts # Hook da API (armas)
+│   ├── useEldenRingWeapons.ts # Hook da API (armas)
+│   └── useEldenRingShields.ts # Hook da API (escudos)
 └── lib/                  # Utilitários
     ├── types.ts          # Tipos TypeScript
     └── utils.ts          # Funções utilitárias
@@ -101,6 +104,7 @@ src/
 Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **📜 Classes**: `https://eldenring.fanapis.com/api/classes`
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
+- **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **👹 Chefes**: `https://eldenring.fanapis.com/api/bosses`
 
 ## 📝 Scripts Disponíveis
