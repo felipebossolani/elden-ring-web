@@ -33,9 +33,16 @@ export function Navigation() {
                   Ashes
                 </Button>
               </Link>
-              <Button variant="ghost" disabled className="text-muted-foreground">
-                Bosses
-              </Button>
+              <Link href="/ammo">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Ammo
+                </Button>
+              </Link>
+              <Link href="/bosses">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Bosses
+                </Button>
+              </Link>
             </div>
             
             {/* Theme Toggle */}

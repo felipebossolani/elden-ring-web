@@ -1,13 +1,16 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { useEldenRingAPI } from '@/hooks/useEldenRingAPI';
 
-describe('useEldenRingAPI', () => {
-  const mockData = [{ id: 'a1', name: 'Ash' }];
+const mockBosses = [
+  { id: 'b1', name: 'Margit' },
+  { id: 'b2', name: 'Godrick' },
+];
 
+describe('useEldenRingAPI - bosses', () => {
   beforeEach(() => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
-      json: async () => ({ success: true, data: mockData }),
+      json: async () => ({ success: true, data: mockBosses }),
     });
   });
 
@@ -15,12 +18,12 @@ describe('useEldenRingAPI', () => {
     jest.resetAllMocks();
   });
 
-  it('fetches data from the provided endpoint', async () => {
-    const { result } = renderHook(() => useEldenRingAPI('ashes'));
+  it('fetches bosses list', async () => {
+    const { result } = renderHook(() => useEldenRingAPI('bosses'));
 
     await waitFor(() => expect(result.current.loading).toBe(false));
 
-    expect(result.current.data).toEqual(mockData);
+    expect(result.current.data).toEqual(mockBosses);
     expect(result.current.error).toBeNull();
   });
 });

@@ -77,6 +77,34 @@ export interface EldenRingAsh {
 
 export type EldenRingAshesResponse = EldenRingApiResponse<EldenRingAsh>;
 
+export interface EldenRingBoss {
+  id: string;
+  name: string;
+  image: string | null;
+  region: string;
+  description: string;
+  location: string;
+  drops: string[];
+  healthPoints: string;
+}
+
+export type EldenRingBossesResponse = EldenRingApiResponse<EldenRingBoss>;
+
+export interface EldenRingAmmo {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  type: string;
+  attackPower: Array<{
+    name: string;
+    amount: number;
+  }>;
+  passive: string;
+}
+
+export type EldenRingAmmoResponse = EldenRingApiResponse<EldenRingAmmo>;
+
 export interface PaginationInfo {
   currentPage: number;
   totalItems: number;
