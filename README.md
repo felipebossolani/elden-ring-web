@@ -110,6 +110,8 @@ src/
 Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **📜 Classes**: `https://eldenring.fanapis.com/api/classes`
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
+- **🧑‍🤝‍🧑 NPCs**: `https://eldenring.fanapis.com/api/npcs`
+- **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **👹 Chefes**: `https://eldenring.fanapis.com/api/bosses`
 
 ## 📝 Scripts Disponíveis
