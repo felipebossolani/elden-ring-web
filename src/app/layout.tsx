@@ -36,6 +36,19 @@ export default function RootLayout({
         <meta name="description" content="Explore the classes, weapons, and lore of Elden Ring. Your guide to The Lands Between." />
         <meta name="keywords" content="elden ring, classes, weapons, fromsoft, dark souls, guides" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Elden Ring - The Lands Between Guide" />
+        <meta property="og:description" content="Explore the classes, weapons, and lore of Elden Ring. Your guide to The Lands Between." />
+        <meta property="og:image" content="og-image.jpg" />
+        <meta property="og:url" content="https://example.com/elden-ring-web/" />
+        <meta property="og:site_name" content="Elden Ring Guide" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Elden Ring - The Lands Between Guide" />
+        <meta name="twitter:description" content="Explore the classes, weapons, and lore of Elden Ring. Your guide to The Lands Between." />
+        <meta name="twitter:image" content="og-image.jpg" />
+        <meta name="twitter:url" content="https://example.com/elden-ring-web/" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} antialiased bg-background text-foreground`}
