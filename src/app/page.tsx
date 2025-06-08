@@ -90,6 +90,25 @@ export default function Home() {
               </CardContent>
             </Card>
 
+            <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="font-medieval text-golden-light">Ammo</CardTitle>
+                <CardDescription>
+                  Bolts, arrows and all ammunition for your weapons.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Prepare for battle with a variety of ammunition types.
+                </p>
+                <Link href="/ammo">
+                  <Button className="w-full bg-golden hover:bg-golden-dark text-background">
+                    View Ammo
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
             <Card className="border-border/50 bg-card/80 backdrop-blur-sm opacity-60">
               <CardHeader>
                 <CardTitle className="font-medieval text-muted-foreground">Bosses</CardTitle>
