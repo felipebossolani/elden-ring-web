@@ -34,7 +34,12 @@ export function Navigation() {
               <Link href="/ammo">
                 <Link href="/sorceries">
                 <Link href="/npcs">
+                <Link href="/shields">
                 <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Shields
+                </Button>
+              </Link>
+              <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
                   NPCs
                 </Button>
               </Link>

@@ -17,6 +17,7 @@ Um site elegante e responsivo dedicado ao universo de **Elden Ring**, construíd
 - **🧑‍🤝‍🧑 NPCs**: Encontre comerciantes e aliados
   - Busca por nome do NPC
   - Paginação com 16 NPCs por página
+- **🛡️ Shields**: Defesas variadas para todos os estilos
 - **🌓 Dark/Light Mode**: Sistema completo de alternância de tema
   - Toggle na navegação superior direita
   - Persistência da preferência no localStorage
@@ -87,6 +88,7 @@ src/
 │   └── Navigation.tsx    # Navegação principal
 ├── hooks/                # Hooks customizados
 │   ├── useEldenRingAPI.ts # Hook da API (classes)
+│   └── useEldenRingWeapons.ts # Hook da API (armas)
 │   ├── useEldenRingWeapons.ts # Hook da API (armas)
 │   └── useEldenRingShields.ts # Hook da API (escudos)
 │   ├── useEldenRingAPI.ts   # Hook da API (classes)
@@ -116,6 +118,7 @@ Este projeto utiliza a [Elden Ring Fan API](https://eldenring.fanapis.com/docs):
 - **⚔️ Armas**: `https://eldenring.fanapis.com/api/weapons`
 - **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **🧑‍🤝‍🧑 NPCs**: `https://eldenring.fanapis.com/api/npcs`
+- **🛡️ Shields**: `https://eldenring.fanapis.com/api/shields`
 - **👹 Chefes**: `https://eldenring.fanapis.com/api/bosses`
 
 ## 📝 Scripts Disponíveis
