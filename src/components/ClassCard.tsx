@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { EldenRingClass } from "@/lib/types";
+import { Class } from "@/lib/types";
 import Image from "next/image";
 
 interface ClassCardProps {
-  eldenClass: EldenRingClass;
+  eldenClass: Class;
 }
 
 export function ClassCard({ eldenClass }: ClassCardProps) {

@@ -1,8 +1,8 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { useEldenRingAPI } from '@/hooks/useEldenRingAPI';
-import { EldenRingLocation } from '@/lib/types';
+import { Location } from '@/lib/types';
 
-const mockLocations: EldenRingLocation[] = [
+const mockLocations: Location[] = [
   { id: 'loc1', name: 'Stormveil Castle', image: 'img.png', region: 'Limgrave', description: 'test' },
 ];
 
@@ -19,7 +19,7 @@ describe('useEldenRingAPI', () => {
   });
 
   it('fetches locations data', async () => {
-    const { result } = renderHook(() => useEldenRingAPI<EldenRingLocation>('locations'));
+    const { result } = renderHook(() => useEldenRingAPI<Location>('locations'));
 
     await waitFor(() => expect(result.current.loading).toBe(false));
 

@@ -2,11 +2,11 @@
 
 import { ClassCard } from "@/components/ClassCard";
 import { LoadingCard } from "@/components/LoadingCard";
-import { EldenRingClass } from "@/lib/types";
+import { Class } from "@/lib/types";
 import { useEldenRingAPI } from "@/hooks/useEldenRingAPI";
 
 export default function ClassesPage() {
-  const { data: classes, loading, error } = useEldenRingAPI<EldenRingClass>("classes");
+  const { data: classes, loading, error } = useEldenRingAPI<Class>("classes");
 
   if (error) {
     return (

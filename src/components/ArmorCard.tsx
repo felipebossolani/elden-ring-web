@@ -1,10 +1,10 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { EldenRingArmor } from "@/lib/types";
+import { Armor } from "@/lib/types";
 
 interface ArmorCardProps {
-  armor: EldenRingArmor;
+  armor: Armor;
 }
 
 export function ArmorCard({ armor }: ArmorCardProps) {

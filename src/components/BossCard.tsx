@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { EldenRingBoss } from "@/lib/types";
+import { Boss } from "@/lib/types";
 import Image from "next/image";
 
 interface BossCardProps {
-  boss: EldenRingBoss;
+  boss: Boss;
 }
 
 export function BossCard({ boss }: BossCardProps) {

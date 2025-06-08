@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { EldenRingAmmo } from "@/lib/types";
+import { Ammo } from "@/lib/types";
 
 interface UseAmmoResult {
-  ammos: EldenRingAmmo[];
+  ammos: Ammo[];
   loading: boolean;
   error: string | null;
 }
 
 export function useEldenRingAmmo(search: string = ""): UseAmmoResult {
-  const [ammos, setAmmos] = useState<EldenRingAmmo[]>([]);
+  const [ammos, setAmmos] = useState<Ammo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

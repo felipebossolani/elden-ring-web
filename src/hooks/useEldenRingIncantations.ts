@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { EldenRingIncantation, PaginationInfo } from "@/lib/types";
+import { Incantation, PaginationInfo } from "@/lib/types";
 
 interface UseIncantationsResult {
-  incantations: EldenRingIncantation[];
+  incantations: Incantation[];
   loading: boolean;
   error: string | null;
   pagination: PaginationInfo;
@@ -17,7 +17,7 @@ interface UseIncantationsParams {
 export function useEldenRingIncantations(
   params: UseIncantationsParams = {}
 ): UseIncantationsResult {
-  const [incantations, setIncantations] = useState<EldenRingIncantation[]>([]);
+  const [incantations, setIncantations] = useState<Incantation[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [pagination, setPagination] = useState<PaginationInfo>({

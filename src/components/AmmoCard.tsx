@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { EldenRingAmmo } from "@/lib/types";
+import { Ammo } from "@/lib/types";
 import Image from "next/image";
 
 interface AmmoCardProps {
-  ammo: EldenRingAmmo;
+  ammo: Ammo;
 }
 
 export function AmmoCard({ ammo }: AmmoCardProps) {

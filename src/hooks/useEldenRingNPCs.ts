@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { EldenRingNPC, PaginationInfo } from "@/lib/types";
+import { NPC, PaginationInfo } from "@/lib/types";
 
 interface UseNPCsParams {
   page?: number;
@@ -8,7 +8,7 @@ interface UseNPCsParams {
 }
 
 interface UseNPCsResult {
-  npcs: EldenRingNPC[];
+  npcs: NPC[];
   loading: boolean;
   error: string | null;
   pagination: PaginationInfo;
@@ -17,7 +17,7 @@ interface UseNPCsResult {
 export function useEldenRingNPCs(params: UseNPCsParams = {}): UseNPCsResult {
   const { page = 0, limit = 20, search } = params;
 
-  const [npcs, setNpcs] = useState<EldenRingNPC[]>([]);
+  const [npcs, setNpcs] = useState<NPC[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [pagination, setPagination] = useState<PaginationInfo>({

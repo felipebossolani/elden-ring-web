@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { EldenRingSorcery } from "@/lib/types";
+import { Sorcery } from "@/lib/types";
 import Image from "next/image";
 
 interface SorceryCardProps {
-  sorcery: EldenRingSorcery;
+  sorcery: Sorcery;
 }
 
 export function SorceryCard({ sorcery }: SorceryCardProps) {

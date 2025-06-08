@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { EldenRingTalisman, PaginationInfo } from "@/lib/types";
+import { Talisman, PaginationInfo } from "@/lib/types";
 
 interface UseTalismansResult {
-  talismans: EldenRingTalisman[];
+  talismans: Talisman[];
   loading: boolean;
   error: string | null;
   pagination: PaginationInfo;
@@ -17,7 +17,7 @@ interface UseTalismansParams {
 export function useEldenRingTalismans(
   params: UseTalismansParams = {}
 ): UseTalismansResult {
-  const [talismans, setTalismans] = useState<EldenRingTalisman[]>([]);
+  const [talismans, setTalismans] = useState<Talisman[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [pagination, setPagination] = useState<PaginationInfo>({
@@ -56,7 +56,7 @@ export function useEldenRingTalismans(
         const data = await response.json();
 
         if (data.success && data.data) {
-          let filtered = data.data as EldenRingTalisman[];
+          let filtered = data.data as Talisman[];
 
           const shouldPaginateClient = !!search;
 

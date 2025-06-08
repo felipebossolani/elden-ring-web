@@ -1,10 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { EldenRingWeapon } from "@/lib/types";
+import { Weapon } from "@/lib/types";
 import Image from "next/image";
 
 interface WeaponCardProps {
-  weapon: EldenRingWeapon;
+  weapon: Weapon;
 }
 
 export function WeaponCard({ weapon }: WeaponCardProps) {

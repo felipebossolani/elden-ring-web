@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { EldenRingWeapon, PaginationInfo } from "@/lib/types";
+import { Weapon, PaginationInfo } from "@/lib/types";
 
 interface UseWeaponsResult {
-  weapons: EldenRingWeapon[];
+  weapons: Weapon[];
   loading: boolean;
   error: string | null;
   pagination: PaginationInfo;
@@ -18,7 +18,7 @@ interface UseWeaponsParams {
 }
 
 export function useEldenRingWeapons(params: UseWeaponsParams = {}): UseWeaponsResult {
-  const [weapons, setWeapons] = useState<EldenRingWeapon[]>([]);
+  const [weapons, setWeapons] = useState<Weapon[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [categories, setCategories] = useState<string[]>([]);
@@ -47,7 +47,7 @@ export function useEldenRingWeapons(params: UseWeaponsParams = {}): UseWeaponsRe
         
         if (data.success && data.data) {
           const uniqueCategories = Array.from(
-            new Set(data.data.map((weapon: EldenRingWeapon) => weapon.category))
+            new Set(data.data.map((weapon: Weapon) => weapon.category))
           ).filter(Boolean).sort() as string[];
           
           setCategories(uniqueCategories);
@@ -96,7 +96,7 @@ export function useEldenRingWeapons(params: UseWeaponsParams = {}): UseWeaponsRe
           // Filter by category client-side since API doesn't support category filter
           if (category && category !== "all") {
             filteredWeapons = filteredWeapons.filter(
-              (weapon: EldenRingWeapon) => weapon.category === category
+              (weapon: Weapon) => weapon.category === category
             );
           }
 

@@ -1,9 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { EldenRingTalisman } from "@/lib/types";
+import { Talisman } from "@/lib/types";
 import Image from "next/image";
 
 interface TalismanCardProps {
-  talisman: EldenRingTalisman;
+  talisman: Talisman;
 }
 
 export function TalismanCard({ talisman }: TalismanCardProps) {
