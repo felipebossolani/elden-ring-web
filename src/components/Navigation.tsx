@@ -23,6 +23,11 @@ export function Navigation() {
                   Weapons
                 </Button>
               </Link>
+              <Link href="/ammo">
+                <Button variant="ghost" className="text-foreground hover:text-golden hover:bg-golden/10">
+                  Ammo
+                </Button>
+              </Link>
               <Button variant="ghost" disabled className="text-muted-foreground">
                 Bosses
               </Button>
