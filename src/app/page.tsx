@@ -51,7 +51,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
               <CardHeader>
                 <CardTitle className="font-medieval text-golden-light">Classes</CardTitle>
@@ -102,6 +102,13 @@ export default function Home() {
                 <Link href="/armors">
                   <Button className="w-full bg-golden hover:bg-golden-dark text-background">
                     View Armors
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-card/80 backdrop-blur-sm hover:border-golden/30 transition-all duration-300">
+              <CardHeader>
                 <CardTitle className="font-medieval text-golden-light">Ammo</CardTitle>
                 <CardDescription>
                   Bolts, arrows and all ammunition for your weapons.
