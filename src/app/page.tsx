@@ -21,17 +21,27 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link href="/classes">
-              <Button size="lg" className="bg-golden hover:bg-golden-dark text-background font-medieval text-lg px-8 py-6 h-auto transition-all duration-300 hover:shadow-lg hover:shadow-golden/30">
+              <Button
+                size="lg"
+                className="bg-golden hover:bg-golden-dark text-background font-medieval text-lg px-8 py-6 h-auto transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-golden/30"
+              >
                 Explore Classes
               </Button>
             </Link>
             <Link href="/weapons">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-golden/50 text-golden hover:bg-golden/10 font-medieval text-lg px-8 py-6 h-auto"
+              <Button
+                size="lg"
+                className="bg-golden hover:bg-golden-dark text-background font-medieval text-lg px-8 py-6 h-auto transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-golden/30"
               >
                 Explore Weapons
+              </Button>
+            </Link>
+            <Link href="/items">
+              <Button
+                size="lg"
+                className="bg-golden hover:bg-golden-dark text-background font-medieval text-lg px-8 py-6 h-auto transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-golden/30"
+              >
+                Explore Items
               </Button>
             </Link>
           </div>
