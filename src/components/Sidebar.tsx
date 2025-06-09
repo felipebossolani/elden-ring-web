@@ -118,10 +118,10 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           {/* Footer */}
           <div className="flex-shrink-0 p-3 border-t border-border/50">
             <p className="text-xs text-muted-foreground text-center leading-tight">
-              Built with{" "}
-              <a 
-                href="https://docs.eldenring.fanapis.com/docs/" 
-                target="_blank" 
+              Powered by{" "}
+              <a
+                href="https://docs.eldenring.fanapis.com/docs/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-golden hover:text-golden-light transition-colors"
               >
